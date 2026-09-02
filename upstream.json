@@ -1,0 +1,89 @@
+{
+  "$comment": "Machine-readable upstream metadata. Human guide: UPSTREAM.md. Updated by .github/workflows/upstream-sync.yml (sha.fetched/integrated) — never edit sha.pinned.",
+  "repository": "pangin/eventcatalog-miro-app",
+  "upstream": {
+    "url": "https://github.com/event-catalog/eventcatalog-miro-app.git",
+    "web": "https://github.com/event-catalog/eventcatalog-miro-app",
+    "defaultBranch": "main",
+    "relation": "github-fork (public, inside the fork network)"
+  },
+  "branches": {
+    "main": "main",
+    "vendor": "vendor/upstream-main",
+    "syncBranchPrefix": "sync/upstream-"
+  },
+  "sha": {
+    "pinned": "01a17a3541f20328682ba728c5b11ead506f8036",
+    "pinnedAt": "2026-04-07T12:59:35+01:00",
+    "pinnedTag": null,
+    "fetched": "01a17a3541f20328682ba728c5b11ead506f8036",
+    "fetchedAt": "2026-09-02T05:59:15Z",
+    "integrated": "01a17a3541f20328682ba728c5b11ead506f8036",
+    "integratedAt": "2026-09-02T05:59:15Z"
+  },
+  "owner": {
+    "github": "pangin",
+    "name": "성욱 (pangin)"
+  },
+  "sync": {
+    "cadence": "매주 월요일 00:00 UTC (09:00 KST) 예약 실행 + workflow_dispatch 수동 실행",
+    "workflow": ".github/workflows/upstream-sync.yml",
+    "identity": "deploy key \"upstream-sync\" (secret UPSTREAM_SYNC_SSH_KEY); fallback GITHUB_TOKEN with warning",
+    "mergeStrategy": "merge commit only (squash/rebase disabled at repository level)",
+    "botPushesMain": false
+  },
+  "role": {
+    "classification": "optional",
+    "reason": "Miro Web SDK 앱. EventCatalog export JSON을 사용자가 직접 가져와 사용하며 core에 의존하지 않는다."
+  },
+  "licenseBoundary": {
+    "root": "MIT",
+    "commercialPaths": [],
+    "productionRestriction": "없음",
+    "licenseKeyEnvVars": [],
+    "ossOnlyPolicy": "해당 없음",
+    "licenseFiles": [
+      "LICENSE.md"
+    ],
+    "noticeFiles": []
+  },
+  "build": {
+    "node": "20.x",
+    "packageManager": "npm",
+    "lockfiles": [
+      "package-lock.json",
+      "pnpm-lock.yaml"
+    ],
+    "install": "npm ci",
+    "build": "npm run build",
+    "test": "n/a (테스트 스크립트 없음)",
+    "run": "npm start  # vite dev 서버 http://localhost:3000 (Miro 보드 안에서만 기능)",
+    "smoke": "npm run build 후 dist/index.html, dist/app.html 존재",
+    "verifyWorkflow": ".github/workflows/fork-verify.yml"
+  },
+  "upstreamWorkflows": [],
+  "protection": {
+    "main": [
+      "pull-request-only",
+      "required review 1 (admin bypass for PR merge)",
+      "required checks: Fork Verify jobs",
+      "merge commit only",
+      "no force-push",
+      "no deletion"
+    ],
+    "vendor/upstream-main": [
+      "updates only by sync identity (deploy key)",
+      "no force-push",
+      "no deletion"
+    ],
+    "appliedAt": null,
+    "note": "GitHub rulesets on public repos (Free plan). appliedAt is filled when rulesets are active."
+  },
+  "linear": [
+    "GONG-871",
+    "GONG-872",
+    "GONG-876",
+    "GONG-875"
+  ],
+  "generatedAt": "2026-09-02T05:59:15Z"
+}
